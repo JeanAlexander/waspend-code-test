@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encuesta WASD | Waspend Code</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="survey-enhanced.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo"><span>Waspend</span> Code</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="encuesta.html" class="active">Encuesta</a>
+    </nav>
+  </header>
+
+  <canvas id="particles-bg"></canvas>
+
+  <main class="form-section">
+    <div class="form-container animate-fadein">
+      <h2>Danos tu opinion sobre el uso del teclado WASD</h2>
+      <p class="subtitle">
+        Esta encuesta tiene como objetivo analizar los hábitos de control mediante las teclas WASD
+        para mejorar la ergonomía y precisión en interfaces interactivas y sistemas inteligentes.
+      </p>
+
+      <form id="formEncuesta">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="edad">Edad</label>
+          <input type="number" id="edad" required>
+        </div>
+
+        <div class="form-group">
+          <label>¿Qué mano utilizas principalmente para las teclas W-A-S-D?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="pregunta1" value="Izquierda"> Izquierda</label>
+            <label><input type="radio" name="pregunta1" value="Derecha"> Derecha</label>
+            <label><input type="radio" name="pregunta1" value="Ambas"> Ambas</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Como consideras tu rapidez de reacción al usar las teclas W-A-S-D (1–10)</label>
+          <input type="range" id="pregunta2" min="1" max="10" value="5">
+        </div>
+
+        <div class="form-group">
+          <label>¿Qué dedo utilizas con mayor frecuencia para la tecla “W”?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="pregunta3" value="Índice"> Índice</label>
+            <label><input type="radio" name="pregunta3" value="Medio"> Medio</label>
+            <label><input type="radio" name="pregunta3" value="Anular"> Anular</label>
+            <label><input type="radio" name="pregunta3" value="Otro"> Otro</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>¿Qué tecla sueles presionar con el pulgar?</label>
+          <input type="text" id="pregunta4" placeholder="Ejemplo: barra espaciadora, Shift, Control...">
+        </div>
+
+        <div class="form-group">
+          <label>¿Cómo calificas tu precisión y rendimiento al usar las teclas WASD junto con el mouse?</label>
+          <label>Siendo muy preciso el hecho de que no necesito mirar el teclado ni el mouse para saber que tengo que precionar</label>
+          <div class="radio-group">
+            <label><input type="radio" name="pregunta5" value="Muy preciso"> Muy preciso</label>
+            <label><input type="radio" name="pregunta5" value="Preciso"> Preciso</label>
+            <label><input type="radio" name="pregunta5" value="Regular"> Regular</label>
+            <label><input type="radio" name="pregunta5" value="Necesito mejorar"> Necesito mejorar</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>¿Qué tipo de aplicación te gustaría controlar con un controlador en la mano usando los dedos como en el teclado WASD?</label>
+          <input type="text" id="pregunta6" placeholder="Ejemplo: vehiculos,accesos remotos, drones, simuladores...">
+        </div>
+
+        <button type="submit" class="btn-enviar glow">Enviar respuestas</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Waspend Code — Innovación y Control Inteligente</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

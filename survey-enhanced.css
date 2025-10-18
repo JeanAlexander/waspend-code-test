@@ -1,0 +1,185 @@
+/* === Mejora visual formal del formulario de encuesta === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+  --bg-dark: #050a1a;
+  --bg-mid: #0b1225;
+  --cyan: #00d4ff;
+  --blue: #0077ff;
+  --text-light: #d7f3ff;
+}
+
+/* Fondo de partículas */
+#particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 30% 20%, rgba(0, 255, 255, 0.1), transparent 60%),
+              radial-gradient(circle at 70% 80%, rgba(0, 120, 255, 0.1), transparent 70%);
+}
+
+/* Sección del formulario */
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 140px 20px 60px;
+}
+
+/* Contenedor principal */
+.form-container {
+  width: 90%;
+  max-width: 720px;
+  background: rgba(20, 30, 60, 0.9);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 50px 60px;
+  backdrop-filter: blur(12px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.25);
+}
+
+/* Animación de entrada */
+.animate-fadein {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título principal */
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.9em;
+  text-align: center;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Subtítulo */
+.subtitle {
+  text-align: center;
+  color: #a8d6ff;
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+/* === Campos de formulario === */
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #bdeaff;
+  font-size: 0.95em;
+}
+
+/* Entradas */
+input[type="text"],
+input[type="number"],
+input[type="range"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 204, 255, 0.4);
+  background: rgba(10, 15, 30, 0.8);
+  color: #e0f6ff;
+  font-size: 1em;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 15px rgba(0, 204, 255, 0.3);
+}
+
+/* Radio buttons */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.radio-group label {
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-group label:hover {
+  background: rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.25);
+}
+
+/* Botón principal */
+.btn-enviar {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05em;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-enviar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px var(--cyan);
+}
+
+.btn-enviar.glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9em;
+  color: #7ecfff;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.2);
+}
